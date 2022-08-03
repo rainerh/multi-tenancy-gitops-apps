@@ -1,0 +1,14 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: es-starter-app
+  # annotations:
+  #   argocd.argoproj.io/sync-options: Validate=false
+spec:
+  host: ""
+  path: /
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: es-starter-app
